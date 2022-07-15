@@ -25,6 +25,7 @@ import com.intellij.ide.util.treeView.AbstractTreeStructure;
 import com.intellij.ide.util.treeView.NodeDescriptor;
 import com.intellij.ide.util.treeView.NodeRenderer;
 import com.intellij.openapi.Disposable;
+import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.ui.AnimatedIcon;
 import com.intellij.ui.LoadingNode;
 import com.intellij.ui.RelativeFont;
@@ -202,10 +203,14 @@ final class TasksTreeView extends AbstractView<Tree> {
           JPopupMenu menu = new JPopupMenu("Popup Menu");
           JMenuItem removeTaskMenuItem = new JMenuItem("Remove Task");
           removeTaskMenuItem.addActionListener(
-              it -> {
-                model.tasksTreeProperty().removeTask(selectedTask);
-                model.selectedTaskProperty().setValue(null);
-              });
+              it ->
+                  ApplicationManager.getApplication()
+                      .invokeLater(
+                          () -> {
+                            model.selectedTaskProperty().setValue(null);
+                            TasksToolWindowService.getInstance(selectedTask.getProject())
+                                .removeTask(selectedTask);
+                          }));
           menu.add(removeTaskMenuItem);
           menu.show(e.getComponent(), e.getX(), e.getY());
         }

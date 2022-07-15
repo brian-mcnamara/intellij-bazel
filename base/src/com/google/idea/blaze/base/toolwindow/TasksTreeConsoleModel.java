@@ -49,4 +49,9 @@ final class TasksTreeConsoleModel {
   public Queue<Task> getTopLevelFinishedTasks() {
     return topLevelFinishedTasks;
   }
+
+  /** Removes a {@link Task} from the top level of tasks, if it is one. */
+  public void removeTopLevelTask(Task task) {
+    topLevelFinishedTasks.remove(task);
+  }
 }
