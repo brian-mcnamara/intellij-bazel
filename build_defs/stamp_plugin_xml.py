@@ -174,7 +174,7 @@ def main():
   if args.plugin_xml:
     dom = minidom.parse(args.plugin_xml)
   else:
-    dom = minidom.parseString("<idea-plugin/>")
+    dom = minidom.parseString("<idea-plugin allow-bundled-update=\"true\"/>")
 
   since_build_numbers = {}
   until_build_numbers = {}
