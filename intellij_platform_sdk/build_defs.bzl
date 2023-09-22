@@ -92,6 +92,10 @@ DIRECT_IJ_PRODUCTS = {
         ide = "intellij",
         directory = "intellij_ce_2023_2",
     ),
+    "intellij-2023.3": struct(
+        ide = "intellij",
+        directory = "intellij_ce_2023_3",
+    ),
     "intellij-2023.2-mac": struct(
         ide = "intellij",
         directory = "intellij_ce_2023_2",
@@ -140,6 +144,10 @@ DIRECT_IJ_PRODUCTS = {
         ide = "intellij-ue",
         directory = "intellij_ue_2023_2",
     ),
+    "intellij-ue-2023.3": struct(
+            ide = "intellij-ue",
+            directory = "intellij_ue_2023_3",
+        ),
     "intellij-ue-2023.2-mac": struct(
         ide = "intellij-ue",
         directory = "intellij_ue_2023_2",
@@ -536,6 +544,7 @@ def java_version_flags():
         "intellij-ue-2022.1-mac": java11,
         "intellij-ue-2022.2": java11,
         "intellij-ue-2022.2-mac": java11,
+        "intellij-ue-2022.3": java11,
         "android-studio-2022.2": java11,
         "android-studio-dev": java11,
         "clion-2021.3": java11,

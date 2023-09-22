@@ -206,6 +206,13 @@ config_setting(
 )
 
 config_setting(
+    name = "intellij-2023.3",
+    values = {
+        "define": "ij_product=intellij-2023.3",
+    },
+)
+
+config_setting(
     name = "intellij-2023.2-mac",
     values = {
         "cpu": "darwin_x86_64",
@@ -295,6 +302,14 @@ config_setting(
         "define": "ij_product=intellij-ue-2023.2",
     },
 )
+
+config_setting(
+    name = "intellij-ue-2023.3",
+    values = {
+        "define": "ij_product=intellij-ue-2023.3",
+    },
+)
+
 
 config_setting(
     name = "intellij-ue-2023.1-mac",
@@ -738,6 +753,7 @@ java_library(
         "intellij-ue-2022.3": ["@jsr305_annotations//jar"],
         "intellij-ue-2023.1": ["@jsr305_annotations//jar"],
         "intellij-ue-2023.2": ["@jsr305_annotations//jar"],
+        "intellij-ue-2023.3": ["@jsr305_annotations//jar"],
         "android-studio-2022.2": ["@jsr305_annotations//jar"],
         "android-studio-2022.3": ["@jsr305_annotations//jar"],
         "android-studio-2023.1": ["@jsr305_annotations//jar"],
